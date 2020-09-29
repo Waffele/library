@@ -1,8 +1,6 @@
 package chmielecki.a.library.bootstrap;
 
-import chmielecki.a.library.domain.Book;
-import chmielecki.a.library.domain.Pending;
-import chmielecki.a.library.domain.User;
+
 import chmielecki.a.library.repositories.BookRepository;
 import chmielecki.a.library.repositories.PendingRepository;
 import chmielecki.a.library.repositories.UserRepository;
@@ -36,22 +34,7 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        User eric = new User("Eric");
-        Book book = new Book("example","123");
-        //Pending pending = new Pending(0);
 
-        bookRepository.save(book);
-       // pendingRepository.save(pending);
-        userRepository.save(eric);
-
-        //eric.setPending(pending);
-        //pending.setUser(eric);
-        //pending.setBook(book);
-        //book.setPending(pending);
-
-        bookRepository.save(book);
-        //pendingRepository.save(pending);
-        userRepository.save(eric);
 
 
     }
