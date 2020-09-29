@@ -1,12 +1,64 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8"/>
     <title>Spring Framework Guru</title>
 </head>
-<body>
+<br>
 <h1>Main</h1>
+<br/>
+<h1>Book List</h1>
 
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Pending id</th>
+        <th>ISBN</th>
+    </tr>
+    <tr th:each="book : ${books}">
+        <td th:text="${book.id}">123</td>
+        <td th:text="${book.title}"> Spring in Action</td>
+        <td th:if="${book.pending != null}" th:text="${book.pending.id}">Wrox</td>
+        <td th:unless="${book.pending != null}" >  ---</td>
+        <td th:text="${book.isbn}">123</td>
+    </tr>
+</table>
+
+<br/>
+<h1>Pendings List</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Days left</th>
+        <th>Book id</th>
+        <th>User id</th>
+    </tr>
+    <tr th:each="pending : ${pendings}">
+        <td th:text="${pending.id}">123</td>
+        <td th:text="${pending.days}">123</td>
+        <td th:text="${pending.book.id}"> Spring in Action</td>
+        <td th:text="${pending.user.id}">Wrox</td>
+    </tr>
+</table>
+
+<br/>
+<h1>User List</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Pending id</th>
+    </tr>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}">123</td>
+        <td th:text="${user.name}"> Spring in Action</td>
+        <td th:if="${user.pending != null}" th:text="${user.pending.id}">Wrox</td>
+        <td th:unless="${user.pending != null}" >       ---</td>
+    </tr>
+</table>
 
 </body>
 </html>

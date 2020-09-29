@@ -17,11 +17,18 @@ public class Pending {
 
     private int days;
 
+
     public Pending(int days) {
         this.days = days;
     }
 
     public Pending() {
+    }
+    public Pending(long id,int days, Book book, User user){
+        this.id= id;
+        this.days = days;
+        this.user = user;
+        this.book = book;
     }
 
     @Override
@@ -29,8 +36,6 @@ public class Pending {
         return "Pending{" +
                 "id=" + id +
                 "days=" + days +
-                ", book=" + book +
-                ", user=" + user +
                 '}';
     }
 

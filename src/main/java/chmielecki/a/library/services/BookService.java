@@ -8,5 +8,6 @@ public interface BookService {
 
 
     public Book saveUpdateBook(Book book);
+    public Book deleteBook(Book book);
     public Optional<Book> findBookById(Long id);
 }
