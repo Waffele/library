@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Framework Guru</title>
+</head>
+<body>
+<h1>Pendings List</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Days left</th>
+        <th>User id</th>
+        <th>Book id</th>
+    </tr>
+    <tr th:each="pending : ${pendings}">
+        <td th:text="${pending.id}">123</td>
+        <td th:text="${pending.days}">123</td>
+        <td th:text="${pending.book.id}"> Spring in Action</td>
+        <td th:text="${pending.user.id}">Wrox</td>
+    </tr>
+</table>
+
+</body>
+</html>

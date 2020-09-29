@@ -11,12 +11,12 @@
     <tr>
         <th>ID</th>
         <th>Title</th>
-        <th>Publisher</th>
+        <th>Pending id</th>
     </tr>
     <tr th:each="book : ${books}">
         <td th:text="${book.id}">123</td>
         <td th:text="${book.title}"> Spring in Action</td>
-        <td th:text="${book.publisher.name}">Wrox</td>
+        <td th:text="${book.pending.id}">Wrox</td>
     </tr>
 </table>
 

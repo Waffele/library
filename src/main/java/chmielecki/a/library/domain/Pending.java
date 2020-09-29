@@ -15,9 +15,10 @@ public class Pending {
     @OneToOne
     private User user;
 
-    public Pending(Book book, User user) {
-        this.book = book;
-        this.user = user;
+    private int days;
+
+    public Pending(int days) {
+        this.days = days;
     }
 
     public Pending() {
@@ -27,6 +28,7 @@ public class Pending {
     public String toString() {
         return "Pending{" +
                 "id=" + id +
+                "days=" + days +
                 ", book=" + book +
                 ", user=" + user +
                 '}';
@@ -39,6 +41,7 @@ public class Pending {
 
         Pending pending = (Pending) o;
 
+        if (days != pending.days) return false;
         if (id != null ? !id.equals(pending.id) : pending.id != null) return false;
         if (book != null ? !book.equals(pending.book) : pending.book != null) return false;
         return user != null ? user.equals(pending.user) : pending.user == null;
@@ -49,7 +52,16 @@ public class Pending {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (book != null ? book.hashCode() : 0);
         result = 31 * result + (user != null ? user.hashCode() : 0);
+        result = 31 * result + days;
         return result;
+    }
+
+    public int getDays() {
+        return days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
     }
 
     public Long getId() {

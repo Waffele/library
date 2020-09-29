@@ -13,8 +13,6 @@ public class Book {
     private String isbn;
 
     @OneToOne
-    private User user;
-    @OneToOne
     private Pending pending;
 
     public Book() {
@@ -35,7 +33,6 @@ public class Book {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", isbn='" + isbn + '\'' +
-                ", user=" + user +
                 ", pending=" + pending +
                 '}';
     }
@@ -50,7 +47,6 @@ public class Book {
         if (id != null ? !id.equals(book.id) : book.id != null) return false;
         if (title != null ? !title.equals(book.title) : book.title != null) return false;
         if (isbn != null ? !isbn.equals(book.isbn) : book.isbn != null) return false;
-        if (user != null ? !user.equals(book.user) : book.user != null) return false;
         return pending != null ? pending.equals(book.pending) : book.pending == null;
     }
 
@@ -59,7 +55,6 @@ public class Book {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (isbn != null ? isbn.hashCode() : 0);
-        result = 31 * result + (user != null ? user.hashCode() : 0);
         result = 31 * result + (pending != null ? pending.hashCode() : 0);
         return result;
     }
@@ -82,14 +77,6 @@ public class Book {
 
     public void setIsbn(String isbn) {
         this.isbn = isbn;
-    }
-
-    public User getuser() {
-        return user;
-    }
-
-    public void setuser(User user) {
-        this.user = user;
     }
 
     public Pending getPending() {
