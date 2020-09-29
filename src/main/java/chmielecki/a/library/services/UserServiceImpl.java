@@ -26,9 +26,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User saveUpdateUser(User user) {
-        if(Objects.isNull(user.getPending())){
-            user.setPending(pendingRepository.findById((long) 2).get());
-        }
+
         return  userRepository.save(user);
     }
 
